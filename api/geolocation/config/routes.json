@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/geolocations",
+      "handler": "geolocation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/geolocations/count",
+      "handler": "geolocation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/geolocations/:id",
+      "handler": "geolocation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/geolocations",
+      "handler": "geolocation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/geolocations/:id",
+      "handler": "geolocation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/geolocations/:id",
+      "handler": "geolocation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

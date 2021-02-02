@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "geolocations",
+  "info": {
+    "name": "Geolocation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Latitude": {
+      "type": "float",
+      "required": true
+    },
+    "Longitude": {
+      "type": "float",
+      "required": true
+    },
+    "sites": {
+      "via": "geolocation",
+      "collection": "site"
+    }
+  }
+}
