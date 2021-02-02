@@ -33,6 +33,10 @@
     "district": {
       "model": "district",
       "via": "sites"
+    },
+    "guides": {
+      "via": "sites",
+      "collection": "guide"
     }
   }
 }
