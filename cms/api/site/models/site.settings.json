@@ -34,6 +34,16 @@
       "model": "district",
       "via": "sites"
     },
+    "Gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
     "guides": {
       "via": "sites",
       "collection": "guide"
