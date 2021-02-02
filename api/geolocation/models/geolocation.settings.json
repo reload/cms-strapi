@@ -21,6 +21,10 @@
     "sites": {
       "via": "geolocation",
       "collection": "site"
+    },
+    "guides": {
+      "via": "geolocation",
+      "collection": "guide"
     }
   }
 }
