@@ -41,12 +41,11 @@ const App = () => {
       .get(`http://localhost:1337/${menuSelected}`)
       .then((res: any) => {
         const resData = res.data as Site[];
-        console.log(resData);
         setColumns(
-          columnsBase[menuSelected].map((i) => ({
-            title: i.toUpperCase(),
-            dataIndex: i,
-            key: i,
+          columnsBase[menuSelected].map((column) => ({
+            title: column.toUpperCase(),
+            dataIndex: column,
+            key: column,
           }))
         );
         setDataSource(resData);
