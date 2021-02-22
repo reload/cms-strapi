@@ -1,6 +1,6 @@
 # Development setup
 
-![Overview of our solution](/docs/overview.jpg?raw=true)
+![Overview of our solution](/docs/overview.png?raw=true)
 
 # SSH into master
 
