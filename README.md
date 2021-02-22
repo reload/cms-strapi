@@ -1,3 +1,9 @@
+# Overview
+
+- `/cctl` consist of a ingest script for strapi
+- `/client` is a simple React SPA
+- `/cms` Strapi CMS
+
 # Development setup
 
 ![Overview of our solution](/docs/overview.png?raw=true)
