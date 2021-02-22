@@ -22,6 +22,8 @@ dependencies:
 hooks:
   build: |
     # Download dependencies and build Strapi.
+    echo "Starting"
+    pwd
     yarn
     yarn build
     # Local development will commit changes to subdirectories that will become mounts on
