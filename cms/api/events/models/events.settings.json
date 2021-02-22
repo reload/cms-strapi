@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "uuid": {
-      "type": "uid"
-    },
     "date": {
       "type": "date"
     },
