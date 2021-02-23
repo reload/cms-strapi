@@ -4,7 +4,7 @@
 # See https://docs.platform.sh/configuration/app.html
 
 # The name of this app. Must be unique within a project.
-name: app
+name: cms
 
 # The runtime the application uses. Strapi not yet suppported with NodeJS 14.
 type: nodejs:12
@@ -74,8 +74,8 @@ web:
         - full_documentation.json
   commands:
     start: |
-      # Production start on `master`, development server otherwise.
-      if [ "$PLATFORM_BRANCH" = master ]; then
+      # Production start on `main`, development server otherwise.
+      if [ "$PLATFORM_BRANCH" = main ]; then
           NODE_ENV=production yarn start
       else
           yarn develop
