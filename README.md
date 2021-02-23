@@ -4,7 +4,7 @@
 - `/client` is a simple React SPA
 - `/cms` Strapi CMS
 
-id: 1
+id: 2
 
 # Development setup
 
