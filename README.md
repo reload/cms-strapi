@@ -4,6 +4,8 @@
 - `/client` is a simple React SPA
 - `/cms` Strapi CMS
 
+test
+
 # Development setup
 
 ![Overview of our solution](/docs/overview.png?raw=true)
