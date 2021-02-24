@@ -4,16 +4,16 @@
 - `/client` is a simple React SPA
 - `/cms` Strapi CMS
 
-id: 2
-
 # Development setup
 
 ![Overview of our solution](/docs/overview.png?raw=true)
 
 # SSH into master
 
-`ssh trr4imilerv5g-master-7rqtwti--app@ssh.eu-5.platform.sh`
+`ssh uh4apdzsvuly4-main-bvxea6i--cms@ssh.eu-5.platform.sh`
 
 # Production
 
-https://www.master-7rqtwti-trr4imilerv5g.eu-5.platformsh.site/admin
+https://www.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site/admin
+
+![Login information](/docs/login.png?raw=true)
