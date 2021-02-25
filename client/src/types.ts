@@ -55,4 +55,6 @@ export type Img = {
   width: number;
 };
 
+export type Menus = "guides" | "sites" | "events";
+
 export type DataSource = Site[] | Guide[] | Event[];
