@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_boxes_box_statistics",
+  "info": {
+    "name": "BoxStatistics",
+    "icon": "chart-bar"
+  },
+  "options": {},
+  "attributes": {
+    "activeUsers": {
+      "type": "integer"
+    },
+    "nonActiveUsers": {
+      "type": "integer"
+    },
+    "disabledUsers": {
+      "type": "integer"
+    },
+    "bannedUsers": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_helpers_accordions",
+  "info": {
+    "name": "accordion",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

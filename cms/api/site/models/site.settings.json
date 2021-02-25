@@ -45,8 +45,16 @@
       "required": true
     },
     "guides": {
-      "via": "sites",
-      "collection": "guide"
+      "collection": "guide",
+      "via": "sites"
+    },
+    "boxes": {
+      "type": "dynamiczone",
+      "components": [
+        "boxes.box-facts",
+        "boxes.box-friendlist",
+        "boxes.box-statistics"
+      ]
     }
   }
 }

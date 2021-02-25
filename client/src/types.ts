@@ -9,6 +9,7 @@ export type Site = {
   published_at: string; // date
   created_at: string; // date
   updated_at: string; // date
+  boxes: (BoxFriendlistType | BoxStatisticsType | BoxFactsType)[];
 };
 
 export type Guide = {
@@ -57,3 +58,29 @@ export type Img = {
 export type Menus = "guides" | "sites" | "events";
 
 export type DataSource = Site[] | Guide[] | Event[];
+
+export type BoxFriendlistType = {
+  __component: "boxes.box-friendlist";
+  id: number;
+  images: { id: number; url: string }[];
+};
+
+export type BoxStatisticsType = {
+  __component: "boxes.box-statistics";
+  id: number;
+  activeUsers: number;
+  nonActiveUsers: number;
+  disabledUsers: number;
+  bannedUsers: number;
+};
+
+export type BoxFactsType = {
+  __component: "boxes.box-facts";
+  id: number;
+  title: string;
+  facts: {
+    id: number;
+    header: string;
+    content: string;
+  }[];
+};

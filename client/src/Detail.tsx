@@ -1,43 +1,16 @@
-import React, { useEffect, useState } from "react";
-
-import {
-  CoffeeOutlined,
-  EnvironmentOutlined,
-  CarryOutOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import axios from "axios";
-import { DataSource, Guide, Site } from "./types";
-
-import LoginForm from "./LoginForm";
-import { Link, RouteComponentProps } from "react-router-dom";
-
-import {
-  Button,
-  Layout,
-  Menu,
-  Table,
-  Typography,
-  List,
-  Statistic,
-  Row,
-  Col,
-} from "antd";
-
-import { Content, Header } from "antd/lib/layout/layout";
-import Avatar from "antd/lib/avatar/avatar";
+import React from "react";
+import { Site } from "./types";
+import { RouteComponentProps } from "react-router-dom";
+import { Layout, List } from "antd";
+import { Content } from "antd/lib/layout/layout";
 import Title from "antd/lib/typography/Title";
 import Text from "antd/lib/typography/Text";
-import { Collapse } from "antd";
-
-const { Panel } = Collapse;
+import { BoxFacts, BoxFriendlist, BoxStatistics } from "./Boxes";
 
 const Detail = (
   props: RouteComponentProps<any, any, { record: Site | null }>
 ) => {
   const record = props.location.state?.record;
-
-  console.log(record);
 
   if (!record) {
     return (
@@ -69,9 +42,9 @@ const Detail = (
           bordered
           dataSource={[
             `id: ${r.id}`,
-            `geolocation: ${r.geolocation}`,
-            `type: ${r.type}`,
-            `district: ${r.district}`,
+            `geolocation: ${JSON.stringify(r.geolocation)}`,
+            `type: ${JSON.stringify(r.type)}`,
+            `district: ${JSON.stringify(r.district)}`,
             `published_at: ${r.published_at}`,
             `created_at: ${r.created_at}`,
             `updated_at: ${r.updated_at}`,
@@ -81,76 +54,26 @@ const Detail = (
         <Title level={3} style={{ marginTop: "20px" }}>
           Components
         </Title>
+        <Text style={{ marginTop: "20px" }}>
+          {r.boxes.length === 0 && "Ingen boxes tilføjet"}
+        </Text>
+        {r.boxes.map((box, index) => {
+          switch (box.__component) {
+            case "boxes.box-facts":
+              return <BoxFacts key={index} data={box} />;
 
-        <BoxContainer>
-          <Title level={5} style={{ marginTop: "20px" }}>
-            BoxFriendlist
-          </Title>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <Avatar
-              shape="square"
-              style={{ marginRight: "10px" }}
-              size={64}
-              src={
-                "https://images.pexels.com/photos/158109/kodiak-brown-bear-adult-portrait-wildlife-158109.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              }
-            />
-          ))}
-        </BoxContainer>
+            case "boxes.box-friendlist":
+              return <BoxFriendlist key={index} data={box} />;
 
-        <BoxContainer>
-          <Title level={5} style={{ marginTop: "20px" }}>
-            BoxStatistics
-          </Title>
-          <Row gutter={16}>
-            <Col span={4}>
-              <Statistic title="Active Users" value={192893} />
-            </Col>
-            <Col span={4}>
-              <Statistic title="Non-active Users" value={123123} />
-            </Col>
-            <Col span={4}>
-              <Statistic title="Disable users" value={441} />
-            </Col>
-            <Col span={4}>
-              <Statistic title="Banned Users" value={5123} />
-            </Col>
-          </Row>
-        </BoxContainer>
+            case "boxes.box-statistics":
+              return <BoxStatistics key={index} data={box} />;
 
-        <BoxContainer>
-          <Title level={5} style={{ marginTop: "20px" }}>
-            BoxFacts
-          </Title>
-          <Collapse defaultActiveKey={["1"]}>
-            <Panel header="This is panel header 1" key="1">
-              <p>Facts linje 1</p>
-            </Panel>
-            <Panel header="This is panel header 2" key="2">
-              <p>Facts linje 2</p>
-            </Panel>
-            <Panel header="This is panel header 3" key="3">
-              <p>Facts linje 3</p>
-            </Panel>
-          </Collapse>
-          ,
-        </BoxContainer>
+            default:
+              return <div>Box ikke implementeret</div>;
+          }
+        })}
       </Content>
     </Layout>
-  );
-};
-
-const BoxContainer = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div
-      style={{
-        border: "2px solid #e4e4e4",
-        padding: "10px",
-        marginTop: "20px",
-      }}
-    >
-      {children}
-    </div>
   );
 };
 

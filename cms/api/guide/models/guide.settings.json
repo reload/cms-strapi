@@ -19,8 +19,8 @@
       "required": true
     },
     "sites": {
-      "collection": "site",
       "via": "guides",
+      "collection": "site",
       "dominant": true
     },
     "geolocation": {

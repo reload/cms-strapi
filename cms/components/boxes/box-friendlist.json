@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_boxes_box_friendlists",
+  "info": {
+    "name": "BoxFriendlist",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

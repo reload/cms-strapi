@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_boxes_box_facts",
+  "info": {
+    "name": "BoxFacts",
+    "icon": "archway",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "facts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "helpers.accordion"
+    }
+  }
+}
