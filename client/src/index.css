@@ -21,3 +21,11 @@ code {
 .site-layout .site-layout-background {
   background: #fff;
 }
+
+.antd-table-row {
+  cursor: pointer;
+}
+
+.antd-table-row:hover {
+  background-color: #eeeeee;
+}

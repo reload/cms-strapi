@@ -9,7 +9,6 @@ export type Site = {
   published_at: string; // date
   created_at: string; // date
   updated_at: string; // date
-  guides: [];
 };
 
 export type Guide = {

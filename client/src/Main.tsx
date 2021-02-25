@@ -51,7 +51,10 @@ const Main = ({ menu }: MainProps) => {
         },
       })
       .then((res: any) => {
-        const resData = res.data as Site[];
+        const resData = res.data as Site[] | null;
+        if (!resData) {
+          return null;
+        }
         setColumns(
           columnsBase[menuSelected].map((column) => ({
             title: column.toUpperCase(),
@@ -59,12 +62,14 @@ const Main = ({ menu }: MainProps) => {
             key: column,
           }))
         );
-        setDataSource(resData);
+        setDataSource(resData.map((r) => ({ ...r, key: r.id })));
       })
       .catch((err: any) => {
         console.error(err);
       });
   }, [menu]);
+
+  const isSites = menu === "sites";
 
   return (
     <Layout className="site-layout">
@@ -72,12 +77,15 @@ const Main = ({ menu }: MainProps) => {
         <Title style={{ textTransform: "capitalize" }}>{menu}</Title>
         {dataSource && columns ? (
           <Table
+            rowClassName={isSites ? "antd-table-row" : ""}
             dataSource={dataSource as any}
             columns={columns}
             onRow={(record) => {
               return {
                 onClick: (event) => {
-                  history.push("/detail", { record });
+                  if (isSites) {
+                    history.push("/detail", { record });
+                  }
                 },
               };
             }}
