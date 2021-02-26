@@ -35,7 +35,7 @@ web:
       allow: true
       passthru: true
       headers:
-        Access-Control-Allow-Origin: "*"
+        Access-Control-Allow-Origin: https://www.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site
         Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD, OPTIONS, PATCH, PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK
   commands:
     start: ./start.sh
