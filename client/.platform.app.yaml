@@ -3,7 +3,7 @@ name: client
 type: "nodejs:14"
 hooks:
   post_deploy: |
-    yarn run build
+    npm run build
 
 # The size of the persistent disk of the application (in MB).
 disk: 1024
