@@ -16,9 +16,9 @@ dependencies:
 # The hooks that will be triggered when the package is deployed.
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
-  build: !include
-    type: string
-    path: build.sh
+  build: |
+    yarn build
+    ./node_modules/.bin/strapi configuration:restore -f configuration-dump.json
 
 # The relationships of the application with services or other applications.
 #
