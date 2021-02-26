@@ -7,6 +7,7 @@ import { Statistic, Row, Col } from "antd";
 import Avatar from "antd/lib/avatar/avatar";
 import Title from "antd/lib/typography/Title";
 import { Collapse } from "antd";
+import { getApiUrl } from "./api";
 
 const { Panel } = Collapse;
 
@@ -36,7 +37,7 @@ export function BoxFriendlist({ data }: { data: BoxFriendlistType }) {
           shape="square"
           style={{ marginRight: "10px" }}
           size={64}
-          src={`http://localhost:1337${i.url}`}
+          src={`${getApiUrl()}/${i.url}`}
         />
       ))}
     </BoxContainer>

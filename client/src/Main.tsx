@@ -14,6 +14,8 @@ import LoginForm from "./LoginForm";
 import Avatar from "antd/lib/avatar/avatar";
 import Title from "antd/lib/typography/Title";
 import { useHistory, Link } from "react-router-dom";
+import Text from "antd/lib/typography/Text";
+import { getApiToken, getApiUrl } from "./api";
 
 const { Content, Footer } = Layout;
 
@@ -45,9 +47,9 @@ const Main = ({ menu }: MainProps) => {
   useEffect(() => {
     const menuSelected = menu;
     axios
-      .get(`http://localhost:1337/${menuSelected}`, {
+      .get(`${getApiUrl()}/${menuSelected}`, {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMjc4ODI2LCJleHAiOjE2MTQ4NzA4MjZ9.WMPFKUGYMR6QER-voz7WG1sAs-t8yO-09WQtLwJAQY0`,
+          Authorization: getApiToken(),
         },
       })
       .then((res: any) => {
@@ -75,6 +77,9 @@ const Main = ({ menu }: MainProps) => {
     <Layout className="site-layout">
       <Content style={{ padding: "50px" }}>
         <Title style={{ textTransform: "capitalize" }}>{menu}</Title>
+        {(!dataSource || dataSource.length === 0) && (
+          <Text>Vi kunne sku ikke hente dit data</Text>
+        )}
         {dataSource && columns ? (
           <Table
             rowClassName={isSites ? "antd-table-row" : ""}

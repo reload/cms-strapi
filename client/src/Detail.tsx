@@ -57,7 +57,7 @@ const Detail = (
         <Text style={{ marginTop: "20px" }}>
           {r.boxes.length === 0 && "Ingen boxes tilføjet"}
         </Text>
-        {r.boxes.map((box, index) => {
+        {record.boxes.map((box, index) => {
           switch (box.__component) {
             case "boxes.box-facts":
               return <BoxFacts key={index} data={box} />;

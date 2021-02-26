@@ -5,8 +5,17 @@
 
 "https://www.{default}/":
   type: upstream
-  upstream: "cms:http"
+  upstream: "client:http"
 
 "https://{default}/":
   type: redirect
   to: "https://www.{default}/"
+
+"https://www.api.{default}/":
+  type: upstream
+  upstream: "cms:http"
+
+"https://api.{default}/":
+  type: redirect
+  id: "cms"
+  to: "https://www.api.{default}/"
