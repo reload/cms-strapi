@@ -6,6 +6,7 @@ rm config/server.json && mv platformsh/server.json config/environments/developme
 
 # Rebuild the admin panel.
 yarn build
+./node_modules/.bin/strapi configuration:restore -f configuration-dump.json
 
 # Make start command executable.
 chmod +x start.sh
