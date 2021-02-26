@@ -125,11 +125,23 @@ async function createEntry(
   headers?: any
 ) {
   try {
+    const config = {
+      prod: {
+        url: "https://www.api.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site",
+        token:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0MzQ2MDM4LCJleHAiOjE2MTY5MzgwMzh9.7YJNQLYSgzOSiiruooRcNPdTZ6qvuN2Rdq7by82Jj1U",
+      },
+      dev: {
+        url: "http://localhost:1337",
+        token:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMjc4ODI2LCJleHAiOjE2MTQ4NzA4MjZ9.WMPFKUGYMR6QER-voz7WG1sAs-t8yO-09WQtLwJAQY0",
+      },
+    };
+
     return axios
-      .post(`http://localhost:1337${collectionTypeUrl}`, payload, {
+      .post(`${config.prod.url}${collectionTypeUrl}`, payload, {
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMjc4ODI2LCJleHAiOjE2MTQ4NzA4MjZ9.WMPFKUGYMR6QER-voz7WG1sAs-t8yO-09WQtLwJAQY0",
+          Authorization: config.prod.token,
           ...headers,
         },
       })
