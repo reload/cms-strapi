@@ -31,7 +31,7 @@ relationships:
 # The configuration of app when it is exposed to the web.
 web:
   locations:
-    "/":
+    "*":
       headers:
         Access-Control-Allow-Origin: "*"
         Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD, OPTIONS, PATCH, PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK
