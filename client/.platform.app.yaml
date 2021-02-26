@@ -6,6 +6,10 @@ hooks:
     yarn install
     yarn run build
 
+dependencies:
+  nodejs:
+    yarn: "*"
+
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
