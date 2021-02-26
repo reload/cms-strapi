@@ -9,7 +9,7 @@ export type Site = {
   published_at: string; // date
   created_at: string; // date
   updated_at: string; // date
-  boxes: (BoxFriendlistType | BoxStatisticsType | BoxFactsType)[];
+  boxes?: (BoxFriendlistType | BoxStatisticsType | BoxFactsType)[];
 };
 
 export type Guide = {

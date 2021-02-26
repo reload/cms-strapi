@@ -55,9 +55,9 @@ const Detail = (
           Components
         </Title>
         <Text style={{ marginTop: "20px" }}>
-          {r.boxes.length === 0 && "Ingen boxes tilføjet"}
+          {(!r.boxes || r.boxes?.length === 0) && "Ingen boxes tilføjet"}
         </Text>
-        {record.boxes.map((box, index) => {
+        {record.boxes?.map((box, index) => {
           switch (box.__component) {
             case "boxes.box-facts":
               return <BoxFacts key={index} data={box} />;
