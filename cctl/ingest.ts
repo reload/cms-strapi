@@ -129,19 +129,19 @@ async function createEntry(
       prod: {
         url: "https://www.api.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site",
         token:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0MzQ2MDM4LCJleHAiOjE2MTY5MzgwMzh9.7YJNQLYSgzOSiiruooRcNPdTZ6qvuN2Rdq7by82Jj1U",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0NjA2NTQ1LCJleHAiOjE2MTcxOTg1NDV9.oUaLCf2aT-oihe8S01oF2bWQpKe7dS_B8GHEZWU9Ggk",
       },
       dev: {
         url: "http://localhost:1337",
         token:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMjc4ODI2LCJleHAiOjE2MTQ4NzA4MjZ9.WMPFKUGYMR6QER-voz7WG1sAs-t8yO-09WQtLwJAQY0",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0NjA3NjM3LCJleHAiOjE2MTcxOTk2Mzd9.w1mMwH04zxo_mi3upGf1pt0mSszXCqreSWWJ5LLbEjU",
       },
     };
 
     return axios
-      .post(`${config.prod.url}${collectionTypeUrl}`, payload, {
+      .post(`${config.dev.url}${collectionTypeUrl}`, payload, {
         headers: {
-          Authorization: config.prod.token,
+          Authorization: config.dev.token,
           ...headers,
         },
       })
