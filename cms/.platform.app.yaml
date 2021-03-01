@@ -17,9 +17,13 @@ dependencies:
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
+    echo "1. -------------> Installing"
     yarn install
+    echo "2. -------------> Restoring from configuration"
     ./node_modules/.bin/strapi configuration:restore -f configuration-dump.json
+    echo "3. -------------> Building"
     yarn build
+    echo "4. -------------> Start chmod"
     chmod +x start.sh
 
 # The relationships of the application with services or other applications.
