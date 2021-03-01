@@ -32,8 +32,8 @@ hooks:
     echo "4. -------------> Building"
     yarn build
     echo "4. -------------> Logging environment"
-    echo "$PLATFORM_BRANCH"
-    if [ "$PLATFORM_BRANCH" = main ]; then
+    echo "${PLATFORM_BRANCH}"
+    if [ "${PLATFORM_BRANCH}" = main ]; then
       echo "Starting in PROD mode"
     else
       echo "Starting in DEV mode"
@@ -87,6 +87,6 @@ mounts:
   "components":
     source: local
     source_path: components
-  "public/uploads":
+  "public":
     source: local
     source_path: uploads
