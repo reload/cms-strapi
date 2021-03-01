@@ -23,9 +23,8 @@ hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
     echo "1. -------------> Moving files to temp directory"
-      # Move committed files in soon-to-be mounts into temp directory.
-      chmod +x handle_mounts.sh
-      ./handle_mounts.sh
+    chmod +x handle_mounts.sh
+    ./handle_mounts.sh
     echo "2. -------------> Installing"
     yarn install
     echo "3. -------------> Restoring from configuration"
@@ -33,16 +32,16 @@ hooks:
     echo "4. -------------> Building"
     yarn build
     echo "4. -------------> Logging environment"
-    if [ "$PLATFORM_BRANCH" = master ]; then
+    if [ "$PLATFORM_BRANCH" = main ]; then
       echo "Starting in PROD mode"
     else
       echo "Starting in DEV mode"
     fi
 
-    deploy: |
-        echo "5. -------------> Moving temp directories back into mounts"
-        # Move committed files from temp directory back into mounts.
-        ./handle_mounts.sh
+  deploy: |
+    echo "5. -------------> Moving temp directories back into mounts"
+    chmod +x handle_mounts.sh
+    ./handle_mounts.sh
 
 # The relationships of the application with services or other applications.
 #
@@ -57,8 +56,8 @@ web:
   commands:
     # Start command run after build phase has completed, prior to deploy hook.
     start: |
-      # Production start on `master`, development server otherwise.
-      if [ "$PLATFORM_BRANCH" = master ]; then
+      # Production start on `main`, development server otherwise.
+      if [ "$PLATFORM_BRANCH" = main ]; then
           NODE_ENV=production yarn start
       else
           yarn develop
