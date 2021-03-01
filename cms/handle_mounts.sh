@@ -7,7 +7,7 @@ prepare_mount() {
         if [ ! -d $MOUNT_TMP ]; then
             mkdir -p $MOUNT_TMP
         fi
-        mkdir -p $MOUNT_TMP$1-tmp && mv -r $PLATFORM_APP_DIR$1 $MOUNT_TMP$1-tmp
+        mkdir -p $MOUNT_TMP$1-tmp && mv $PLATFORM_APP_DIR$1 $MOUNT_TMP$1-tmp
     fi
 }
 
