@@ -139,9 +139,9 @@ async function createEntry(
     };
 
     return axios
-      .post(`${config.dev.url}${collectionTypeUrl}`, payload, {
+      .post(`${config.prod.url}${collectionTypeUrl}`, payload, {
         headers: {
-          Authorization: config.dev.token,
+          Authorization: config.prod.token,
           ...headers,
         },
       })
@@ -227,10 +227,10 @@ async function ingestEntries() {
     contentTypesSites.map((c) =>
       createEntry("/sites", {
         ...c,
-        geolocation: [pickRandomItem(idsGeolocation)],
-        type: [pickRandomItem(idsTypes)],
-        district: [idsDistrict],
-        Gallery: [pickRandomItem(idsMedia)],
+        geolocation: pickRandomItem(idsGeolocation),
+        type: pickRandomItem(idsTypes),
+        district: pickRandomItem(idsDistrict),
+        Gallery: pickRandomItem(idsMedia),
       })
     )
   ).then(mapPickIds);
@@ -243,8 +243,8 @@ async function ingestEntries() {
     contentTypesGuides.map((c) =>
       createEntry("/guides", {
         ...c,
-        geolocation: [pickRandomItem(idsGeolocation)],
-        Sites: [0],
+        geolocation: pickRandomItem(idsGeolocation),
+        Sites: [pickRandomItem(idsSites)],
       })
     )
   ).then(mapPickIds);

@@ -37,7 +37,7 @@ export function BoxFriendlist({ data }: { data: BoxFriendlistType }) {
           shape="square"
           style={{ marginRight: "10px" }}
           size={64}
-          src={`${getApiUrl()}/${i.url}`}
+          src={`${getApiUrl()}${i.url}`}
         />
       ))}
     </BoxContainer>
