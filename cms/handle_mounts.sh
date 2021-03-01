@@ -3,7 +3,7 @@
 MOUNT_TMP=platformsh-mounts
 
 prepare_mount() {
-    echo "Running: prepare_mount"
+    echo "Running: prepare_mount '$PLATFORM_APP_DIR$1'"
     if [ -d $PLATFORM_APP_DIR$1 ]; then
         if [ ! -d $MOUNT_TMP ]; then
             mkdir -p $MOUNT_TMP
@@ -13,7 +13,7 @@ prepare_mount() {
 }
 
 restore_mount() {
-    echo "Running: restore_mount"
+    echo "Running: restore_mount  '$PLATFORM_APP_DIR$1'"
     if [ -d $MOUNT_TMP$1-tmp ]; then
         rm -r $PLATFORM_APP_DIR$1/*
         cp -r $MOUNT_TMP$1-tmp/* $PLATFORM_APP_DIR$1
