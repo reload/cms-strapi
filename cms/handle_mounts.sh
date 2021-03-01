@@ -5,9 +5,9 @@ MOUNT_TMP=platformsh-mounts
 prepare_mount() {
     if [ -d $PLATFORM_APP_DIR$1 ]; then
         if [ ! -d $MOUNT_TMP ]; then
-            mkdir $MOUNT_TMP
+            mkdir -p $MOUNT_TMP
         fi
-        mkdir $MOUNT_TMP$1-tmp && mv $PLATFORM_APP_DIR$1/* $MOUNT_TMP$1-tmp
+        mkdir -p $MOUNT_TMP$1-tmp && mv $PLATFORM_APP_DIR$1/* $MOUNT_TMP$1-tmp
     fi
 }
 
