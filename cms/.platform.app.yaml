@@ -54,7 +54,7 @@ mounts:
     source_path: api
   "components":
     source: local
-    source_path: components
+    source_path: components2
   "public/uploads":
     source: local
     source_path: uploads
