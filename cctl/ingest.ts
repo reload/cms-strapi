@@ -129,7 +129,7 @@ async function createEntry(
       prod: {
         url: "https://www.api.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site",
         token:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0NjA2NTQ1LCJleHAiOjE2MTcxOTg1NDV9.oUaLCf2aT-oihe8S01oF2bWQpKe7dS_B8GHEZWU9Ggk",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE0NjA4NTM2LCJleHAiOjE2MTcyMDA1MzZ9.dbvpjL7NoHpb3T3Ju4tx7yfuWtplLrc05pMOwkx513w",
       },
       dev: {
         url: "http://localhost:1337",
