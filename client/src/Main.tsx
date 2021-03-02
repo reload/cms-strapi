@@ -47,10 +47,6 @@ const Main = ({ menu }: MainProps) => {
   useEffect(() => {
     const menuSelected = menu;
 
-    if (dataSource && dataSource?.length > 0) {
-      return;
-    }
-
     axios
       .get(`${getApiUrl()}/${menuSelected}`, {
         headers: {
