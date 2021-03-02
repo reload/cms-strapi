@@ -60,9 +60,6 @@ web:
 disk: 1024
 
 mounts:
-  "/.tmp":
-    source: local
-    source_path: tmp
   # Strapi's cache directory.
   "/.cache":
     source: local
