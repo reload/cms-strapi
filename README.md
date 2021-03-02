@@ -14,6 +14,10 @@
 
 # Production
 
+Client - react:
 https://www.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site/admin
+
+CMS - strapi:
+https://www.api.main-bvxea6i-uh4apdzsvuly4.eu-5.platformsh.site/admin
 
 ![Login information](/docs/login.png?raw=true)
