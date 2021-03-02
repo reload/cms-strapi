@@ -22,9 +22,9 @@ build:
 hooks:
   # Build hooks can modify the application files on disk but not access any services like databases.
   build: |
-    echo "1. -------------> Moving files to temp directory"
-    chmod +x handle_mounts.sh
-    ./handle_mounts.sh
+    # echo "1. -------------> Moving files to temp directory"
+    # chmod +x handle_mounts.sh
+    # ./handle_mounts.sh
     echo "2. -------------> Installing"
     yarn install
     echo "3. -------------> Restoring from configuration"
@@ -33,8 +33,8 @@ hooks:
     yarn build
 
   deploy: |
-    echo "5. -------------> Moving temp directories back into mounts"
-    ./handle_mounts.sh
+    # echo "5. -------------> Moving temp directories back into mounts"
+    # ./handle_mounts.sh
 
 # The relationships of the application with services or other applications.
 #
@@ -65,17 +65,9 @@ mounts:
     source: local
     source_path: cache
   # Allow for updates to the API (new JSONs) at runtime.
-  "api":
-    source: local
-    source_path: api
-  # Give write access for extension configuration JSONs.
   "extensions":
     source: local
     source_path: extensions
-  # Allow for custom components at runtime.
-  "components":
+  "public":
     source: local
-    source_path: components
-  "web/uploads":
-    source: local
-    source_path: uploads2
+    source_path: uploads
