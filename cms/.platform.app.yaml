@@ -76,6 +76,6 @@ mounts:
   "components":
     source: local
     source_path: components
-  "public":
+  "web/uploads":
     source: local
-    source_path: uploads
+    source_path: uploads2
